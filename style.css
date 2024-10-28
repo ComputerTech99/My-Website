@@ -1,0 +1,108 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    background: #f4f4f4;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#skills, #projects, #contact {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.skills-list, .projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.project {
+    background: #f4f4f4;
+    padding: 2.5rem;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+#contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact input, #contact textarea, #contact button {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#contact button {
+    background: #333;
+    color: #fff;
+    border: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    margin-top: 2rem;
+}

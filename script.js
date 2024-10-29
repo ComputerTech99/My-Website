@@ -7,3 +7,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+// Toggle search bar visibility
+document.getElementById('search-icon').addEventListener('click', function() {
+    document.getElementById('search-bar').style.display = 'block';
+});
+
+function closeSearch() {
+    document.getElementById('search-bar').style.display = 'none';
+}

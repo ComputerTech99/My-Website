@@ -54,7 +54,7 @@ header nav a {
 }
 
 #skills, #projects, #contact {
-    padding: 2rem 1rem;
+    padding: 2rem 4rem;
     text-align: center;
 }
 
@@ -78,6 +78,7 @@ header nav a {
     border-radius: 10px;
     width: 350px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    
 }
 #contact form {
     max-width: 500px;
@@ -191,6 +192,7 @@ header {
 .search-bar button:hover {
     background: #555;
 }
+
 /* Basic Reset */
 * {
     margin: 0;
@@ -228,28 +230,81 @@ body {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png');
 }
 
-.social-icon.twitter {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg');
-}
-
-.social-icon.instagram {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png');
-}
-
-.social-icon.reddit {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/8/82/Reddit_logo_and_wordmark.svg');
-}
-
 .social-icon.stackoverflow {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ef/Stack_Overflow_icon.svg');
 }
 
-.social-icon.personal {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/69/User_icon_BLACK-01.svg');
+.projects-section {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
 }
+
+.project-card {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.tagline {
+    color: #757575;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.project-description {
+    font-size: 16px;
+    color: #5f6368;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.get-started {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 30px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.get-started:hover {
+    background-color: #333;
+    color: #fff;
+}
+.projects-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 
 
 /* Hover Effect */
 .social-icon:hover {
     transform: scale(1.1);
 }
+

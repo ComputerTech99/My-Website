@@ -7,24 +7,45 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <!-- Placeholder for Logo -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="logo-img">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#skills">Skill</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-                <li><a href="#work">View My Work</a></li>
-                <li><a href="#history">History</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#search" id="search-icon"><i class="fas fa-search"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <!-- Placeholder for Logo -->
+            <img src="Logo.png" alt="Microsoft Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#skills">Skill</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+            <li><a href="#work">View My Work</a></li>
+            <!-- History tab -->
+            <li><a href="javascript:void(0);" onclick="openHistory()">History</a></li>
+            <!-- Updates tab -->
+            <li><a href="javascript:void(0);" onclick="openUpdates()">Updates</a></li>
+            <!-- Certifications tab -->
+            <li><a href="javascript:void(0);" onclick="openCertifications()">Certifications</a></li>
+            <li><a href="#search" id="search-icon"><i class="fas fa-search"></i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    // Function to open the Updates page in a new tab
+    function openUpdates() {
+        window.open('updates.html', '_blank');
+    }
+
+    // Function to open the Certifications page in a new tab
+    function openCertifications() {
+        window.open('certification.html', '_blank');
+    }
+    // Function to open the History page in a new tab
+    function openHistory() {
+            window.open('history.html', '_blank');
+        }
+
+</script>
+
+</body>
 
     <!-- Search Bar (Hidden by default) -->
     <div id="search-bar" class="search-bar">
@@ -85,6 +106,7 @@
             </div>
         </div>
     </section>
+    
 
     <!-- Projects Section -->
     <section id="contact">

@@ -15,3 +15,9 @@ document.getElementById('search-icon').addEventListener('click', function() {
 function closeSearch() {
     document.getElementById('search-bar').style.display = 'none';
 }
+
+// Toggle the visibility of the Updates section
+function toggleUpdates() {
+    const updatesSection = document.getElementById('updates');
+    updatesSection.classList.toggle('show');
+}

@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+}
+
+#certifications {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.certifications-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.certifications-header h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.certifications-header p {
+    font-size: 24px;
+    color: #6e6e73;
+    margin-bottom: 40px;
+}
+
+/* Certification Card Styles */
+.certification-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.certification-image {
+    flex: 1;
+}
+
+.certification-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.certification-info {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.certification-date {
+    font-size: 13px;
+    color: #6e6e73;
+    margin-bottom: 8px;
+}
+
+.certification-info h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.certification-description {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    font-size: 17px;
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: 1px solid #d2d2d7;
+    background-color: #fff;
+    color: #1d1d1f;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #f5f5f7;
+    border-color: #6e6e73;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certification-card {
+        flex-direction: column;
+    }
+    .certification-info {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}

@@ -1,0 +1,219 @@
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+}
+
+#history {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.history-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.history-header h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.history-header p {
+    font-size: 24px;
+    color: #6e6e73;
+    margin-bottom: 40px;
+}
+
+.history-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.subscribe-btn {
+    font-size: 17px;
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: 1px solid #d2d2d7;
+    background-color: #fff;
+    color: #1d1d1f;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.subscribe-btn:hover{
+    background-color: #f5f5f7;
+    border-color: #6e6e73;
+}
+.follow-btn {
+    font-size: 17px;
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: 1px solid #d2d2d7;
+    background-color: #fff;
+    color: #1d1d1f;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    display: inline-block;
+}
+
+.follow-btn:hover {
+    background-color: #f5f5f7;
+    border-color: #6e6e73;
+}
+
+.blog-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.blog-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.blog-image {
+    flex: 1;
+}
+
+.blog-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.blog-info {
+    flex: 1;
+    padding: 0 40px;
+}
+
+.blog-date {
+    font-size: 13px;
+    color: #6e6e73;
+    margin-bottom: 8px;
+}
+
+.blog-info h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.blog-description {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #1d1d1f;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(29, 29, 31, 0.85);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 40px;
+    border: 1px solid #d2d2d7;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 17px;
+    color: #6e6e73;
+    margin-bottom: 30px;
+}
+
+.modal-content .close-btn {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #6e6e73;
+    cursor: pointer;
+}
+
+.modal-content .close-btn:hover {
+    color: #1d1d1f;
+}
+
+#subscribe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#email {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    font-size: 17px;
+}
+
+.submit-btn {
+    font-size: 17px;
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: none;
+    background-color: #0071e3;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-card {
+        flex-direction: column;
+    }
+    .blog-info {
+        padding: 20px 0 0 0;
+    }
+    .modal-content {
+        margin: 20% auto;
+    }
+}
+
+/* Blog Card */
+.blog-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+}
+
+.blog-card:nth-child(even) {
+    flex-direction: row-reverse;
+}

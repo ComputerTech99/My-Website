@@ -136,7 +136,7 @@ header {
 }
 
 .logo-img {
-    width: 25px;
+    width: 70px;
 }
 
 .nav-links {
@@ -308,3 +308,140 @@ body {
     transform: scale(1.1);
 }
 
+
+
+/* Updates Tab Styles */
+#updates-tab {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#updates-tab:hover {
+    background-color: #0056b3;
+}
+
+/* Updates Section */
+#updates {
+    max-width: 800px;
+    padding: 40px 20px;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 60px; /* Adjust as necessary */
+    display: none; /* Initially hidden */
+}
+
+/* Show the updates section when not hidden */
+#updates.show {
+    display: block;
+}
+
+/* Updates Header Styles */
+.updates-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.updates-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.updates-header p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.updates-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.subscribe-btn, .follow-btn {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.subscribe-btn {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.follow-btn {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.subscribe-btn:hover {
+    background-color: #ddd;
+}
+
+.follow-btn:hover {
+    background-color: #555;
+}
+
+/* Update Card Styles */
+.update-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.update-info {
+    flex: 1;
+}
+
+.update-info h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 10px;
+}
+
+.update-info .update-date {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.update-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .update-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .update-image img {
+        width: 100%;
+    }
+}

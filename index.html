@@ -15,7 +15,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="#skills">Skill</a></li>
-            <li><a href="#contact">Contact Me</a></li>
+            <li><a href="javascript:void(0);" onclick="openContactMe()">Contact Me</a></li>
             <li><a href="#work">View My Work</a></li>
             <!-- History tab -->
             <li><a href="javascript:void(0);" onclick="openHistory()">History</a></li>
@@ -41,6 +41,10 @@
     // Function to open the History page in a new tab
     function openHistory() {
             window.open('history.html', '_blank');
+        }
+
+        function openContactMe() {
+            window.open('contact.html', '_blank');
         }
 
 </script>
@@ -135,32 +139,24 @@
     </body>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <form action="https://example.com/submit-form" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
 
     <body>
-
-        <!-- Social Media Links -->
-        <div class="social-media">
-            <a href="https://github.com/ComputerTech99/Tech" target="_blank" class="social-icon github" title="GitHub"></a>
-            <a href="https://www.linkedin.com/in/ojash-gupta-3b2167216" target="_blank" class="social-icon linkedin" title="LinkedIn"></a>
-            <a href="https://stackoverflow.com/users/21220225" target="_blank" class="social-icon stackoverflow" title="Stack Overflow"></a>
+<footer class="social-footer">
+    <div class="social-footer-content">
+        <h2>Join me on social!</h2>
+        <p>Get to know about me!</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ojash.gupta.14/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/Compute10021701" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://discord.com/tech1690/" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://github.com/ComputerTech99/Tech" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ojash-gupta-3b2167216" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://stackoverflow.com/users/21220225" target="_blank" aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a>
+            <a href="http://www.youtube.com/@computertech6693" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-        <script src="script.js"></script>
-    </body>
+    </div>
+</footer>
+
+<script src="script.js"></script>
     
-
-
-    <footer>
-        <p>© 2024 Ojash. All rights reserved.</p>
-    </footer>
-
-</body>
 </html>

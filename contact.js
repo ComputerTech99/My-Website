@@ -1,17 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Function to validate captcha before submission
-    function isCaptchaValidated(formElement) {
-        // Check if the form has hCaptcha
-        const hcaptchaContainer = formElement.querySelector('.h-captcha');
-        if (!hcaptchaContainer) return true; // If no captcha present, consider it validated
-        
-        // Get the response token
-        const hcaptchaResponse = hcaptcha.getResponse(
-            hcaptchaContainer.getAttribute('data-widget-id')
-        );
-        
-        return hcaptchaResponse && hcaptchaResponse.length > 0;
-    }
+    // With Formspree's built-in captcha, we don't need to manually validate
+    // They will handle the captcha validation server-side
     
     // Form submission handling
     const contactForm = document.getElementById('contact-form');
@@ -39,14 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // Check if captcha is validated (if present)
-            if (!isCaptchaValidated(contactForm)) {
-                event.preventDefault();
-                formStatus.textContent = 'Please complete the captcha verification.';
-                formStatus.classList.add('error');
-                submitButton.classList.remove('loading');
-                return;
-            }
+            // Formspree will handle captcha validation on their server
             
             // For Formspree forms, we'll let it submit naturally but handle the response
             // This event will only run if form validation passes
@@ -107,13 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // Check if captcha is validated (if present)
-            if (!isCaptchaValidated(subscribeForm)) {
-                event.preventDefault();
-                subscribeStatus.textContent = 'Please complete the captcha verification.';
-                subscribeStatus.classList.add('error');
-                return;
-            }
+            // Formspree will handle captcha validation on their server
             
             const formData = new FormData(subscribeForm);
             

@@ -277,17 +277,16 @@ body {
     box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
 }
 
-/* Captcha Styling */
-.h-captcha {
+/* Captcha containers styling */
+#contact-captcha,
+#subscribe-captcha {
     margin: 20px auto;
     display: flex;
     justify-content: center;
 }
 
 /* Make subscribe form captcha fit better in modal */
-#subscribe-form .h-captcha {
-    transform: scale(0.85);
-    transform-origin: center;
+#subscribe-captcha {
     margin: 10px auto;
 }
 

@@ -6,6 +6,8 @@
     <title>Contact Me</title>
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- hCaptcha script for Formspree captcha -->
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 
@@ -36,7 +38,10 @@
                 <textarea id="message" name="message" rows="6" placeholder=" " required></textarea>
                 <label for="message">Message</label>
             </div>
-
+            
+            <!-- Formspree captcha field -->
+            <div class="h-captcha" data-sitekey="6Lcdcf0qAAAAAKkP6jZ_ByhwK2pEA5oDTgv3jvhW" data-theme="light"></div>
+            
             <button type="submit" class="submit-btn" id="submit-button">
                 <span class="btn-text">Send Message</span>
                 <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
@@ -55,6 +60,8 @@
             <form id="subscribe-form" action="https://formspree.io/f/xdkegpek" method="POST">
                 <input type="email" id="modal-email" name="email" placeholder="Email address" required>
                 <input type="hidden" name="form-type" value="subscription">
+                <!-- Formspree captcha field for subscription form -->
+                <div class="h-captcha" data-sitekey="6Lcdcf0qAAAAAKkP6jZ_ByhwK2pEA5oDTgv3jvhW" data-theme="light"></div>
                 <button type="submit" class="submit-btn">Subscribe</button>
             </form>
             <div id="subscribe-status" class="form-status"></div>

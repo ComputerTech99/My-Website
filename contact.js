@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Function to validate captcha before submission
+    function isCaptchaValidated(formElement) {
+        // Check if the form has hCaptcha
+        const hcaptchaContainer = formElement.querySelector('.h-captcha');
+        if (!hcaptchaContainer) return true; // If no captcha present, consider it validated
+        
+        // Get the response token
+        const hcaptchaResponse = hcaptcha.getResponse(
+            hcaptchaContainer.getAttribute('data-widget-id')
+        );
+        
+        return hcaptchaResponse && hcaptchaResponse.length > 0;
+    }
+    
     // Form submission handling
     const contactForm = document.getElementById('contact-form');
     const submitButton = document.getElementById('submit-button');
@@ -20,6 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 // If not using Formspree, prevent default and show error
                 event.preventDefault();
                 formStatus.textContent = 'Please set up Formspree first (see instructions in code).';
+                formStatus.classList.add('error');
+                submitButton.classList.remove('loading');
+                return;
+            }
+            
+            // Check if captcha is validated (if present)
+            if (!isCaptchaValidated(contactForm)) {
+                event.preventDefault();
+                formStatus.textContent = 'Please complete the captcha verification.';
                 formStatus.classList.add('error');
                 submitButton.classList.remove('loading');
                 return;
@@ -80,6 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (!isUsingFormspree) {
                 subscribeStatus.textContent = 'Please set up Formspree first (see instructions in code).';
+                subscribeStatus.classList.add('error');
+                return;
+            }
+            
+            // Check if captcha is validated (if present)
+            if (!isCaptchaValidated(subscribeForm)) {
+                event.preventDefault();
+                subscribeStatus.textContent = 'Please complete the captcha verification.';
                 subscribeStatus.classList.add('error');
                 return;
             }

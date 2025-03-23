@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f5f5f7;
     color: #1d1d1f;
+    line-height: 1.5;
 }
 
 #contact {
@@ -22,6 +23,10 @@ body {
     font-size: 48px;
     font-weight: 600;
     margin-bottom: 20px;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .contact-header p {
@@ -36,7 +41,7 @@ body {
     gap: 20px;
 }
 
-.subscribe-btn {
+.subscribe-btn, .follow-btn {
     font-size: 17px;
     padding: 12px 28px;
     border-radius: 12px;
@@ -44,36 +49,37 @@ body {
     background-color: #fff;
     color: #1d1d1f;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.subscribe-btn:hover {
+.subscribe-btn:hover, .follow-btn:hover {
     background-color: #f5f5f7;
     border-color: #6e6e73;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .follow-btn {
-    font-size: 17px;
-    padding: 12px 28px;
-    border-radius: 12px;
-    border: 1px solid #d2d2d7;
-    background-color: #fff;
-    color: #1d1d1f;
     text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-    display: inline-block;
-}
-
-.follow-btn:hover {
-    background-color: #f5f5f7;
-    border-color: #6e6e73;
 }
 
 /* Contact Form Styles */
 #contact-form {
     max-width: 600px;
     margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+#contact-form:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 .form-group {
@@ -90,6 +96,7 @@ body {
     border-bottom: 1px solid #d2d2d7;
     background-color: transparent;
     color: #1d1d1f;
+    transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
@@ -105,35 +112,77 @@ body {
     font-size: 17px;
     color: #6e6e73;
     pointer-events: none;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .form-group input:focus + label,
 .form-group input:not(:placeholder-shown) + label,
 .form-group textarea:focus + label,
 .form-group textarea:not(:placeholder-shown) + label {
-    top: -10px;
+    top: -5px;
     font-size: 13px;
-    color: #000000;
+    color: #0071e3;
+    font-weight: 500;
 }
 
 .submit-btn {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 200px;
     margin: 0 auto;
     font-size: 17px;
-    padding: 12px;
+    padding: 14px;
     border-radius: 12px;
     border: none;
-    background-color: #040404;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
 }
 
 .submit-btn:hover {
-    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.btn-loader {
+    display: none;
+}
+
+.submit-btn.loading .btn-text {
+    display: none;
+}
+
+.submit-btn.loading .btn-loader {
+    display: inline-block;
+}
+
+.form-status {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.form-status.success {
+    color: #34c759;
+    opacity: 1;
+}
+
+.form-status.error {
+    color: #ff3b30;
+    opacity: 1;
 }
 
 /* Modal Styles */
@@ -147,6 +196,7 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(29, 29, 31, 0.85);
+    backdrop-filter: blur(5px);
 }
 
 .modal-content {
@@ -156,15 +206,32 @@ body {
     border: 1px solid #d2d2d7;
     width: 90%;
     max-width: 500px;
-    border-radius: 12px;
+    border-radius: 18px;
     text-align: center;
     position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: modalOpen 0.4s ease;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .modal-content h2 {
     font-size: 28px;
     font-weight: 600;
     margin-bottom: 20px;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .modal-content p {
@@ -181,6 +248,7 @@ body {
     font-weight: bold;
     color: #6e6e73;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .modal-content .close-btn:hover {
@@ -195,26 +263,18 @@ body {
 
 #modal-email {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-bottom: 20px;
     border: 1px solid #d2d2d7;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 17px;
+    transition: all 0.3s ease;
 }
 
-.submit-btn {
-    font-size: 17px;
-    padding: 12px 28px;
-    border-radius: 12px;
-    border: none;
-    background-color: #000000;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #005bb5;
+#modal-email:focus {
+    outline: none;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
 }
 
 /* Responsive Design */
@@ -229,5 +289,20 @@ body {
 
     .form-group {
         margin-bottom: 30px;
+    }
+    
+    #contact-form {
+        padding: 30px 20px;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .subscribe-btn, .follow-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
     }
 }

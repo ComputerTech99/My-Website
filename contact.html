@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -11,31 +13,36 @@
     <section id="contact">
         <div class="contact-header">
             <h1>Contact Me</h1>
-            <p>I'd love to hear from you! Fill out the form below and I’ll get back to you as soon as possible.</p>
+            <p>I'd love to hear from you! Fill out the form below and I'll get back to you as soon as possible.</p>
             <div class="contact-buttons">
-                <button class="subscribe-btn">🔔 Subscribe</button>
-                <a href="https://twitter.com/Compute10021701" target="_blank" class="follow-btn">✕ Follow</a>
+                <button class="subscribe-btn"><i class="fas fa-bell"></i> Subscribe</button>
+                <a href="https://twitter.com/Compute10021701" target="_blank" class="follow-btn"><i class="fab fa-twitter"></i> Follow</a>
             </div>
         </div>
 
         <!-- Contact Form -->
-        <form id="contact-form">
+        <form id="contact-form" action="https://formspree.io/f/xdkegpek" method="POST">
             <div class="form-group">
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder=" " required>
                 <label for="name">Name</label>
             </div>
 
             <div class="form-group">
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder=" " required>
                 <label for="email">Email</label>
             </div>
 
             <div class="form-group">
-                <textarea id="message" name="message" rows="6" required></textarea>
+                <textarea id="message" name="message" rows="6" placeholder=" " required></textarea>
                 <label for="message">Message</label>
             </div>
 
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" class="submit-btn" id="submit-button">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+            </button>
+
+            <div id="form-status" class="form-status"></div>
         </form>
     </section>
 
@@ -45,10 +52,12 @@
             <span class="close-btn">&times;</span>
             <h2>Subscribe to Updates</h2>
             <p>Enter your email address to receive the latest updates.</p>
-            <form id="subscribe-form">
+            <form id="subscribe-form" action="https://formspree.io/f/xdkegpek" method="POST">
                 <input type="email" id="modal-email" name="email" placeholder="Email address" required>
+                <input type="hidden" name="form-type" value="subscription">
                 <button type="submit" class="submit-btn">Subscribe</button>
             </form>
+            <div id="subscribe-status" class="form-status"></div>
         </div>
     </div>
 

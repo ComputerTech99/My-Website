@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // With Formspree's built-in captcha, we don't need to manually validate
-    // They will handle the captcha validation server-side
-    
     // Form submission handling
     const contactForm = document.getElementById('contact-form');
     const submitButton = document.getElementById('submit-button');
@@ -27,8 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.classList.remove('loading');
                 return;
             }
-            
-            // Formspree will handle captcha validation on their server
             
             // For Formspree forms, we'll let it submit naturally but handle the response
             // This event will only run if form validation passes
@@ -88,8 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 subscribeStatus.classList.add('error');
                 return;
             }
-            
-            // Formspree will handle captcha validation on their server
             
             const formData = new FormData(subscribeForm);
             

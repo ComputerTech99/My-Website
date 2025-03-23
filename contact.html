@@ -6,7 +6,6 @@
     <title>Contact Me</title>
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- No need for external captcha script, Formspree will handle it -->
 </head>
 <body>
 
@@ -37,10 +36,7 @@
                 <textarea id="message" name="message" rows="6" placeholder=" " required></textarea>
                 <label for="message">Message</label>
             </div>
-            
-            <!-- Formspree captcha field - leave empty for Formspree's auto-captcha -->
-            <div id="contact-captcha"></div>
-            
+
             <button type="submit" class="submit-btn" id="submit-button">
                 <span class="btn-text">Send Message</span>
                 <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
@@ -59,8 +55,6 @@
             <form id="subscribe-form" action="https://formspree.io/f/xdkegpek" method="POST">
                 <input type="email" id="modal-email" name="email" placeholder="Email address" required>
                 <input type="hidden" name="form-type" value="subscription">
-                <!-- Formspree captcha field for subscription form - leave empty for Formspree's auto-captcha -->
-                <div id="subscribe-captcha"></div>
                 <button type="submit" class="submit-btn">Subscribe</button>
             </form>
             <div id="subscribe-status" class="form-status"></div>

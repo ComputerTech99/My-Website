@@ -2,21 +2,373 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>First Project Success</title>
-    <link rel="stylesheet" href="blog-post.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Coming Soon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --background: #000;
+            --foreground: #fff;
+            --accent: #888;
+            --card-bg: #111;
+            --border-color: #333;
+            --transition-speed: 0.3s;
+            --gradient: linear-gradient(135deg, #444 0%, #000 100%);
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            padding: 8px 16px;
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            color: var(--foreground);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all var(--transition-speed) ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Blog Article */
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            flex: 1;
+        }
+
+        .blog-article {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+        }
+
+        .blog-header {
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-title {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .blog-author, .blog-date, .blog-category {
+            font-size: 14px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .blog-content {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Coming Soon */
+        .coming-soon {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .coming-soon-icon {
+            font-size: 60px;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .coming-soon-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #888, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .coming-soon-message {
+            font-size: 18px;
+            color: var(--accent);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .subscribe-prompt {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .subscribe-prompt p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: var(--accent);
+        }
+
+        .subscribe-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: var(--foreground);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            font-size: 15px;
+            transition: all var(--transition-speed) ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .subscribe-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Related Posts */
+        .related-posts {
+            margin-top: 60px;
+        }
+
+        .related-posts-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .related-posts-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 0;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .post-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all var(--transition-speed) ease;
+            text-decoration: none;
+            color: var(--foreground);
+            border: 1px solid var(--border-color);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 150px;
+            background-color: #222;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 15px;
+        }
+
+        .post-content span {
+            font-size: 12px;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .post-content h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .post-content p {
+            font-size: 14px;
+            color: var(--accent);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-article {
+                padding: 30px 20px;
+            }
+
+            .blog-title {
+                font-size: 28px;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+            <div class="blog-share">
+                <a href="#" class="back-link">
+                    <i class="fas fa-share-alt"></i>
+                    Share
+                </a>
+            </div>
+        </nav>
+    </header>
 
-    <article class="blog-article">
-        <h1>First Project Success</h1>
-        <p class="post-date">January 15, 2024</p>
-        <div class="post-content">
-            <p>
-                Reflecting on my first project launch, I encountered numerous challenges that tested my skills and determination. From initial planning to execution, every step was a learning experience.
-            </p>
-            <!-- Add the full content of your blog post here -->
-        </div>
-    </article>
+    <!-- Blog Container -->
+    <div class="blog-container">
+        <article class="blog-article">
+            <header class="blog-header">
+                <h1 class="blog-title">First Project Success</h1>
+                <div class="blog-meta">
+                    <div class="blog-author">
+                        <i class="fas fa-user"></i>
+                        <span>Ojash Gupta</span>
+                    </div>
+                    <div class="blog-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>January 15, 2024</span>
+                    </div>
+                    <div class="blog-category">
+                        <i class="fas fa-tag"></i>
+                        <span>Projects</span>
+                    </div>
+                </div>
+            </header>
 
+            <!-- Coming Soon Content -->
+            <div class="coming-soon">
+                <div class="coming-soon-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <h2 class="coming-soon-title">Article Coming Soon</h2>
+                <p class="coming-soon-message">
+                    I'm currently working on this article about my first project success. 
+                    Check back soon to read the full story about the challenges faced and 
+                    lessons learned during this exciting journey.
+                </p>
+                <a href="index.html#contact" class="subscribe-btn">
+                    <i class="fas fa-bell"></i>
+                    Get notified when it's ready
+                </a>
+            </div>
+
+            <!-- Subscribe Prompt -->
+            <div class="subscribe-prompt">
+                <p>Want to be notified when new articles are published?</p>
+                <a href="index.html#contact" class="subscribe-btn">
+                    <i class="fas fa-envelope"></i>
+                    Subscribe to Updates
+                </a>
+            </div>
+        </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Ojash Gupta. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

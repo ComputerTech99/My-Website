@@ -3,160 +3,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ojash Gupta | Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            padding: 0 50px;
+            margin: 0 auto;
+        }
+
+        /* Header & Navigation */
+        header {
+            padding: 40px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 36px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-number {
+            color: #888;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+        .nav-text {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-text:hover {
+            color: #888;
+        }
+
+        .resume-button {
+            border: 1px solid #888;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .resume-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+        }
+
+        .hero-small {
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .hero-name {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: bold;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            max-width: 540px;
+            color: #aaa;
+            font-size: 18px;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .hero-button {
+            display: inline-block;
+            border: 1px solid #888;
+            padding: 15px 30px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .section-number {
+            color: #888;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background-color: #333;
+            margin-left: 20px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .skill-description {
+            color: #888;
+            font-size: 16px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: #111;
+            padding: 30px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-status {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            display: inline-block;
+            border: 1px solid #888;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-description {
+            color: #888;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .social-icon {
+            color: #fff;
+            font-size: 22px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #888;
+        }
+
+        .footer-copyright {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero-name, .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
-<header>
-    <nav class="navbar">
-        <div class="logo">
-            <!-- Placeholder for Logo -->
-            <img src="Logo.png" alt="Microsoft Logo" class="logo-img">
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">O</div>
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <span class="nav-number">01.</span>
+                        <a href="#about" class="nav-text">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-number">02.</span>
+                        <a href="#skills" class="nav-text">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-number">03.</span>
+                        <a href="#work" class="nav-text">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-number">04.</span>
+                        <a href="#contact" class="nav-text">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-number">05.</span>
+                        <a href="history.html" class="nav-text">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-number">06.</span>
+                        <a href="updates.html" class="nav-text">Updates</a>
+                    </li>
+                </ul>
+                <a href="/contact.html" class="resume-button" target="_blank">Resume</a>
+            </nav>
         </div>
-        <ul class="nav-links">
-            <li><a href="#skills">Skill</a></li>
-            <li><a href="javascript:void(0);" onclick="openContactMe()">Contact Me</a></li>
-            <li><a href="#work">View My Work</a></li>
-            <!-- History tab -->
-            <li><a href="javascript:void(0);" onclick="openHistory()">History</a></li>
-            <!-- Updates tab -->
-            <li><a href="javascript:void(0);" onclick="openUpdates()">Updates</a></li>
-            <!-- Certifications tab -->
-            <li><a href="javascript:void(0);" onclick="openCertifications()">Certifications</a></li>
-            <li><a href="#search" id="search-icon"><i class="fas fa-search"></i></a></li>
-        </ul>
-    </nav>
-</header>
+    </header>
 
-<script>
-    // Function to open the Updates page in a new tab
-    function openUpdates() {
-        window.open('updates.html', '_blank');
-    }
+    <main>
+        <section class="hero">
+            <div class="container">
+                <p class="hero-small">Hi, my name is</p>
+                <h1 class="hero-name">Ojash Gupta.</h1>
+                <h2 class="hero-title">I build secure digital systems.</h2>
+                <p class="hero-description">
+                    Passionate coder, breaking into systems, building tech. 
+                    Began coding from a young age, getting skilled in hacking and 
+                    exploring computer security limits.
+                </p>
+                <a href="#work" class="hero-button">View My Work</a>
+            </div>
+        </section>
 
-    // Function to open the Certifications page in a new tab
-    function openCertifications() {
-        window.open('certification.html', '_blank');
-    }
-    // Function to open the History page in a new tab
-    function openHistory() {
-            window.open('history.html', '_blank');
-        }
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">01.</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="hero-description">
+                    I'm a developer with a passion for cybersecurity and building 
+                    digital solutions. My journey in tech started at a young age, 
+                    exploring the limits of computer systems and developing 
+                    a keen interest in ethical hacking.
+                </p>
+            </div>
+        </section>
 
-        function openContactMe() {
-            window.open('contact.html', '_blank');
-        }
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">02.</span>
+                    <h2 class="section-title">Skills</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3 class="skill-title">HTML & CSS</h3>
+                        <p class="skill-description">Building responsive and visually appealing layouts.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-title">JavaScript</h3>
+                        <p class="skill-description">Creating dynamic, interactive web applications.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-title">React</h3>
+                        <p class="skill-description">Single-page applications with React.js.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-title">Node.js & Express</h3>
+                        <p class="skill-description">Backend development and RESTful API creation.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-title">Ethical Hacking</h3>
+                        <p class="skill-description">CEH Certified</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-title">Mobile Development</h3>
+                        <p class="skill-description">iOS and Android full-stack development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-</script>
+        <section id="work" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">03.</span>
+                    <h2 class="section-title">My Work</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <p class="project-status">In Progress</p>
+                        <h3 class="project-title">Project EduGuard</h3>
+                        <p class="project-description">
+                            This project creates a filter for YouTube to block irrelevant content, 
+                            allowing only educational and study materials to be displayed and played.
+                        </p>
+                        <a href="#" class="project-link">Learn More</a>
+                    </div>
+                    <div class="project-card">
+                        <p class="project-status">In Progress</p>
+                        <h3 class="project-title">Project StudySync</h3>
+                        <p class="project-description">
+                            A platform that syncs study materials across devices, organizes by subject, 
+                            sets reminders, and tracks progress to streamline learning.
+                        </p>
+                        <a href="#" class="project-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">04.</span>
+                    <h2 class="section-title">Contact</h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="hero-description" style="text-align: center; margin: 0 auto;">
+                    I'm currently looking for new opportunities. 
+                    Whether you have a question or just want to say hi, 
+                    I'll do my best to get back to you!
+                </p>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="contact.html" class="hero-button">Say Hello</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2 class="footer-title">Join me on social!</h2>
+            <p class="footer-description">Get to know more about me and my work</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/ojash.gupta.14/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/Compute10021701" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://discord.com/tech1690/" target="_blank" class="social-icon">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://github.com/ComputerTech99/Tech" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ojash-gupta-3b2167216" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/21220225" target="_blank" class="social-icon">
+                    <i class="fab fa-stack-overflow"></i>
+                </a>
+                <a href="http://www.youtube.com/@computertech6693" target="_blank" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            <p class="footer-copyright">© 2025 Ojash Gupta. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
-
-    <!-- Search Bar (Hidden by default) -->
-    <div id="search-bar" class="search-bar">
-        <input type="text" placeholder="Search...">
-        <button type="button" onclick="closeSearch()">Close</button>
-    </div>
-
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <h2>Hello, I'm Ojash</h2>
-            <p>Passionate coder,breaking into systems, building tech. Began coding from a young age, getting skilled in hacking and exploring computer security limits.</p>
-            <a href="#projects" class="cta">View My Work</a>
-        </div>
-    </section>
-
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <div class="skill">
-                <h3>HTML & CSS</h3>
-                <p>Building responsive and visually appealing layouts.</p>
-            </div>
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <p>Creating dynamic, interactive web applications.</p>
-            </div>
-            <div class="skill">
-                <h3>React</h3>
-                <p>Single-page applications with React.js.</p>
-            </div>
-            <div class="skill">
-                <h3>Node.js & Express</h3>
-                <p>Backend development and RESTful API creation.</p>
-            </div>
-            <div class="skill">
-                <h3>Ethical Hacking</h3>
-                <p>CEH Certified</p>
-            </div>
-            <div class="skill">
-                <h3>iOS</h3>
-                <p>Backend and frontend development.</p>
-            </div>
-            <div class="skill">
-                <h3>Android</h3>
-                <p>Full Stack development.</p>
-            </div>
-            <div class="skill">
-                <h3>Java</h3>
-                <p>Backend development only.</p>
-            </div>
-            <div class="skill">
-                <h3>Python</h3>
-                <p>Backend, frontend, and RESTful API creation.</p>
-            </div>
-        </div>
-    </section>
-    
-
-    <!-- Projects Section -->
-    <section id="contact">
-        <h2>Projects</h2>
-    <body>
-        <div class="projects-section">
-            <div class="project-card">
-                <p class="tagline">In Progress</p>
-                <h2 class="project-title">Project EduGuard</h2>
-                <p class="project-description">
-                    This project creates a filter for YouTube to block irrelevant content, allowing only educational and study materials to be displayed and played.
-                </p>
-                <a href="#" class="get-started">Learn More</a>
-            </div>
-            
-            <div class="project-card">
-                <p class="tagline">In Progress</p>
-                <h2 class="project-title">Project StudySync</h2>
-                <p class="project-description">
-                    A platform that syncs study materials across devices, organizes by subject, sets reminders, and tracks progress to streamline learning.
-                </p>
-                <a href="#" class="get-started">Learn More</a>
-            </div>
-        </div>
-    </section>
-    </body>
-
-    <!-- Contact Section -->
-
-    <body>
-<footer class="social-footer">
-    <div class="social-footer-content">
-        <h2>Join me on social!</h2>
-        <p>Get to know about me!</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/ojash.gupta.14/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/Compute10021701" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://discord.com/tech1690/" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
-            <a href="https://github.com/ComputerTech99/Tech" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/ojash-gupta-3b2167216" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://stackoverflow.com/users/21220225" target="_blank" aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a>
-            <a href="http://www.youtube.com/@computertech6693" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-</footer>
-
-<script src="script.js"></script>
-    
 </html>
